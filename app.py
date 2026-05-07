@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, render_template, request
+import os
 
 app = Flask(__name__)
+
+folder_path = os.path.dirname(os.path.abspath(__file__))
 
 @app.route("/")
 def index():
