@@ -1,13 +1,49 @@
 from flask import Flask, jsonify, render_template, request
-import os
+from flask_sqlalchemy import SQLAlchemy
+from models import db, User, Card, Collection
+import json, os
+
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "instance", "tcg.db")
+db.init_app(app)
 
-folder_path = os.path.dirname(os.path.abspath(__file__))
+def seed_database():
+    """Import card data from JSON into the SQL database."""
+    try:
+        with open("card_data.json", "r") as f:
+            cards_data = json.load(f)
+
+        for key, data in cards_data.items():
+            # Check if card already exists to avoid duplicates
+            exists = Card.query.filter_by(name=data["name"]).first()
+            if not exists:
+                new_card = Card(
+                    name=data.get("name"),
+                    mana_cost=data.get("mana_cost"),
+                    cmc=data.get("cmc"),
+                    type_line=data.get("type_line"),
+                    oracle_text=data.get("oracle_text"),
+                    # .get() handles missing power/toughness for Lands/Artifacts
+                    power=data.get("power"),
+                    toughness=data.get("toughness"),
+                )
+                db.session.add(new_card)
+
+        db.session.commit()
+        print("Database seeded successfully!")
+    except Exception as e:
+        print(f"Error seeding database: {e}")
+        db.session.rollback()
+
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
+        seed_database()
     app.run(debug=True, host="0.0.0.0")
