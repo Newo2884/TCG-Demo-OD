@@ -37,7 +37,6 @@ def seed_database():
         print(f"Error seeding database: {e}")
         db.session.rollback()
 
-
 @app.route("/")
 def index():
     return render_template("index.html")

@@ -12,3 +12,9 @@ class Card(db.Model):
     power = db.Column(db.String(10))
     toughness = db.Column(db.String(10))
     class_id = db.Column(db.String(50), unique=True)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
+class Collection(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
