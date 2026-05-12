@@ -34,8 +34,6 @@ def register():
         hashedPass = generate_password_hash(request.form["password"])
         newUser = User(
             username = request.form["username"],
-            firstname = request.form["firstname"],
-            lastname = request.form["lastname"],
             password = hashedPass,
             email = request.form["email"],
         )
