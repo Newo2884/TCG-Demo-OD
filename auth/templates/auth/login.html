@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+{% block content %}
+
+<div class="d-none d-md-block">
+    <div class="d-flex container justify-content-between p-3 fw-bold">
+        <h1 class="fw-semibold align-self-center text-dark">Login</h1>
+        <a href="{{ url_for('auth.register') }}" class="btn btn-link fs-4 fw-semibold align-self-center"
+            style="color:rgb(11, 40, 136)">Don't have an account. Sign up here</a>
+    </div>
+    <div class="container p-3 fs-5" style="color:white;">
+        <form method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <br>
+
+            <button href="{{ url_for('main.index') }}" type="submit" class="btn btn-success">Login</button>
+        </form>
+    </div>
+</div>
+<div class="d-md-none">
+    <div class="d-flex container p-3 fw-bold">
+        <h1 class="fw-semibold align-self-center text-dark">Login</h1>
+    </div>
+    <a href="{{ url_for('auth.register') }}" class="btn btn-link d-flex container fs-4 fw-semibold align-self-center"
+        style="color:rgb(11, 40, 136)">Don't have an account. Sign up here</a>
+    <div class="container p-3 fs-5 text-dark">
+        <form method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <br>
+
+            <button href="{{ url_for('main.index') }}" type="submit" class="btn btn-success">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
