@@ -37,6 +37,10 @@
                     <li class="nav-item">
                         <a class="nav-link link-light" href="{{ url_for('auth.logout') }}">Logout</a>
                     </li>
+                    <li>
+                        <a href="https://www.pythonanywhere.com/"
+                            class="nav-item nav-link link-light justify-content-end mx-2">Python Anywhere Website</a>
+                    </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-item nav-link link-light" href="{{ url_for('auth.login') }}">Login</a>
@@ -44,17 +48,12 @@
                     <li class="nav-item">
                         <a class="nav-item nav-link link-light" href="{{ url_for('auth.register') }}">Sign up</a>
                     </li>
+                    <li>
+                        <a href="https://www.pythonanywhere.com/"
+                            class="nav-item nav-link link-light justify-content-end mx-2">Python Anywhere Website</a>
+                    </li>
                     {% endif %}
                 </ul>
-                <div class="justify-content-end collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li>
-                            <a href="https://www.pythonanywhere.com/" target="_blank" rel="noopener noreferrer"
-                                class="nav-item nav-link link-light justify-content-end mx-2">python anywhere
-                                Website</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </nav>

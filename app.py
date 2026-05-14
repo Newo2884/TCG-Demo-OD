@@ -60,6 +60,18 @@ def seed_database():
 def index():
    return render_template("index.html")
 
+@app.route("/get_card_details", methods=["POST"])
+def get_card_details():
+    data = request.json
+    card_class = data.get("className")
+
+    card = Card.query.filter_by(class_id=card_class).first()
+    card_info = card.make_json() if card else None
+
+    if card_info:
+        return jsonify({"success": True, "card": card_info})
+    return jsonify({"success": False, "error": "Card not found"}), 404
+
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()

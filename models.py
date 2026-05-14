@@ -13,6 +13,18 @@ class Card(db.Model):
     toughness = db.Column(db.String(10))
     class_id = db.Column(db.String(50), unique=True)
 
+    def make_json(self):
+        data = {
+                "name" : self.name,
+                "mana_cost" : self.mana_cost,
+                "cmc" : self.cmc,
+                "type_line" : self.type_line,
+                "oracle_text" : self.oracle_text,
+                "power" : self.power,
+                "toughness" : self.toughness
+        }
+        return data
+    
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(120), nullable=False)
