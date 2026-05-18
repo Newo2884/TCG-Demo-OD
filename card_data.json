@@ -6,7 +6,8 @@
         "type_line": "Creature \u2014 Rabbit Unicorn",
         "oracle_text": "Regal Bunnicorn's power and toughness are each equal to the number of nonland permanents you control.",
         "power": "*",
-        "toughness": "*"
+        "toughness": "*",
+        "class_id": "Regal_Bunnicorn"
     },
     "Warren_Warleader": {
         "name": "Warren Warleader",
@@ -15,7 +16,8 @@
         "type_line": "Creature \u2014 Rabbit Knight",
         "oracle_text": "Offspring {2} (You may pay an additional {2} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\nWhenever you attack, choose one \u2014\n\u2022 Create a 1/1 white Rabbit creature token that's tapped and attacking.\n\u2022 Attacking creatures you control get +1/+1 until end of turn.",
         "power": "4",
-        "toughness": "4"
+        "toughness": "4",
+        "class_id": "Warren_Warleader"
     },
     "Devilish_Valet": {
         "name": "Devilish Valet",
@@ -24,7 +26,8 @@
         "type_line": "Creature \u2014 Devil Warrior",
         "oracle_text": "Trample, haste\nAlliance \u2014 Whenever another creature you control enters, double this creature's power until end of turn.",
         "power": "1",
-        "toughness": "3"
+        "toughness": "3",
+        "class_id": "Devilish_Valet"
     },
     "Tender_Wildguide": {
         "name": "Tender Wildguide",
@@ -33,7 +36,8 @@
         "type_line": "Creature \u2014 Possum Druid",
         "oracle_text": "Offspring {2} (You may pay an additional {2} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\n{T}: Add one mana of any color.\n{T}: Put a +1/+1 counter on this creature.",
         "power": "2",
-        "toughness": "2"
+        "toughness": "2",
+        "class_id": "Tender_Wildguide"
     },
     "Command_Tower": {
         "name": "Command Tower",
@@ -42,14 +46,16 @@
         "type_line": "Land",
         "oracle_text": "{T}: Add one mana of any color in your commander's color identity.",
         "power": "",
-        "toughness": ""
+        "toughness": "",
+        "class_id": "Command_Tower"
     },
     "Sol_Ring": {
         "name": "Sol Ring",
         "mana_cost": "{1}",
         "cmc": 1.0,
         "type_line": "Artifact",
-        "oracle_text": "{T}: Add {C}{C}."
+        "oracle_text": "{T}: Add {C}{C}.",
+        "class_id": "Sol_Ring"
     },
     "Champion_Of_Lambholt": {
         "name": "Champion of Lambholt",
@@ -58,7 +64,8 @@
         "type_line": "Creature \u2014 Human Warrior",
         "oracle_text": "Creatures with power less than this creature's power can't block creatures you control.\nWhenever another creature you control enters, put a +1/+1 counter on this creature.",
         "power": "1",
-        "toughness": "1"
+        "toughness": "1",
+        "class_id": "Champion_Of_Lambholt"
     },
     "Jetmir": {
         "name": "Jetmir, Nexus of Revels",
@@ -67,13 +74,15 @@
         "type_line": "Legendary Creature \u2014 Cat Demon",
         "oracle_text": "Creatures you control get +1/+0 and have vigilance as long as you control three or more creatures.\nCreatures you control also get +1/+0 and have trample as long as you control six or more creatures.\nCreatures you control also get +1/+0 and have double strike as long as you control nine or more creatures.",
         "power": "5",
-        "toughness": "4"
+        "toughness": "4",
+        "class_id": "Jetmir"
     },
     "Court_of_Embereth": {
         "name": "Court of Embereth",
         "mana_cost": "{2}{R}{R}",
         "cmc": 4.0,
         "type_line": "Enchantment",
-        "oracle_text": "When this enchantment enters, you become the monarch.\nAt the beginning of your upkeep, create a 3/1 red Knight creature token. Then if you're the monarch, this enchantment deals X damage to each opponent, where X is the number of creatures you control."
+        "oracle_text": "When this enchantment enters, you become the monarch.\nAt the beginning of your upkeep, create a 3/1 red Knight creature token. Then if you're the monarch, this enchantment deals X damage to each opponent, where X is the number of creatures you control.",
+        "class_id": "Court_of_Embereth"
     }
 }

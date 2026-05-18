@@ -10,7 +10,7 @@ from auth.auth import auth_bp
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "instance", "tcg.db")
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "tcg.db")
 db.init_app(app)
 
 login_manager = LoginManager()
@@ -47,6 +47,7 @@ def seed_database():
                     # .get() handles missing power/toughness for Lands/Artifacts
                     power=data.get("power"),
                     toughness=data.get("toughness"),
+                    class_id=data.get("class_id"),
                 )
                 db.session.add(new_card)
 
