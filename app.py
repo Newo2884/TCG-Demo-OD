@@ -57,9 +57,9 @@ def seed_database():
         print(f"Error seeding database: {e}")
         db.session.rollback()
 
-@app.route("/")
+@app.route("/", methods = ['GET', 'POST'])
 def index():
-   return render_template("index.html")
+   return render_template("main/index.html")
 
 @app.route("/get_card_details", methods=["POST"])
 def get_card_details():
