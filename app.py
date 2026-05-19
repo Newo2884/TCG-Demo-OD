@@ -7,9 +7,9 @@ import json, os
 from main.main import main_bp
 from auth.auth import auth_bp
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-
 app = Flask(__name__)
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SECRET_KEY'] = "INSERTACTUALSECRETKEYHERE"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "tcg.db")
 db.init_app(app)
 
@@ -59,7 +59,7 @@ def seed_database():
 
 @app.route("/")
 def index():
-   return render_template("index.html")
+   return render_template("main/index.html")
 
 @app.route("/get_card_details", methods=["POST"])
 def get_card_details():

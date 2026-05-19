@@ -33,3 +33,4 @@ class User(db.Model):
 
 class Collection(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    card_id = db.Column(db.Integer)

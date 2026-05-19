@@ -30,7 +30,6 @@ def login():
 @auth_bp.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-
         hashedPass = generate_password_hash(request.form["password"])
         newUser = User(
             username = request.form["username"],
