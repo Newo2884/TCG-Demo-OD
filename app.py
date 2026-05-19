@@ -59,7 +59,7 @@ def seed_database():
 
 @app.route("/", methods = ['GET', 'POST'])
 def index():
-   return render_template("main/index.html")
+   return render_template("index.html")
 
 @app.route("/get_card_details", methods=["POST"])
 def get_card_details():

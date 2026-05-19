@@ -6,7 +6,7 @@ main_bp = Blueprint("main", __name__, url_prefix="/main", template_folder="templ
 
 @main_bp.route('/index', methods=['GET', 'POST'])
 def index():
-    return render_template("main/index.html")
+    return render_template("index.html")
 
 @login_required
 @main_bp.route('/profile/<int:user_id>', methods=['GET', 'POST'])
