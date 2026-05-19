@@ -8,9 +8,9 @@ from main.main import main_bp
 from auth.auth import auth_bp
 
 app = Flask(__name__)
-basedir = os.path.abspath(os.path.dirname(__file__))
+basedir = os.path.dirname(os.path.abspath(__file__))
 app.config['SECRET_KEY'] = "INSERTACTUALSECRETKEYHERE"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "tcg.db")
+app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{basedir}/tcg.db"
 db.init_app(app)
 
 login_manager = LoginManager()
