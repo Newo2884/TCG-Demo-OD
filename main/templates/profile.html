@@ -3,76 +3,38 @@
 {% block title %}Your Profile{% endblock %}
 
 {% block content %}
-<div class="d-none d-md-block">
-    {% if user.id == current_user.id%}
+{% if user.id == current_user.id%}
 
-    <body>
-        <div class="p-3 pt-3">
-            <h1 class="fw-bold text-dark">This is {{user.username}}'s profile!</h1>
-            <h3 class="fw-semibold text-dark">Here is all of your information about you and where you can make posts.
-            </h3>
-            <div class="flex-container px-4">
-                <div class="d-flex align-items-center mb-2">
-                    <h2>{{ user.firstname }} {{ user.lastname }}</h2>
-                    <h3 class="text-muted">{{ user.email }}</h3>
-                    <h3 class="text-muted">@ {{ user.username }}</h3>
-                </div>
+<body>
+    <div class="p-2 text-dark">
+        <h1 class="fw-bold">This is {{user.username}}'s profile!</h1>
+        <h3 class="fw-semibold">Here is all of your information about you and where you can make posts.
+        </h3>
+        <div class="container">
+            <div class="d-flex align-items-center mb-2">
+                <h2>{{ user.firstname }} {{ user.lastname }}</h2>
+                <h3 class="text-black-50">{{ user.email }}</h3>
+                <h3 class="text-black-50">@{{ user.username }}</h3>
             </div>
         </div>
-    </body>
-    {% else %}
+    </div>
+</body>
+{% else %}
 
-    <body>
-        <div class="p-3 pt-3">
-            <h1 class="fw-bold text-dark">This is {{user.username}}'s profile!</h1>
-            <h3 class="fw-semibold text-dark">Here is all of {{user.username}}'s information and where you can add them
-                as a friend!
-            </h3>
-            <div class="flex-container px-3">
-                <div class=" d-flex align-items-center mb-2">
-                    <h2>{{ user.firstname }} {{ user.lastname }}</h2>
-                    <h3 class="text-muted">{{ user.email }}</h3>
-                    <h3 class="text-muted">@ {{ user.username }}</h3>
-                </div>
+<body>
+    <div class="p-2 pt-3 text-dark">
+        <h1 class="fw-bold">This is {{user.username}}'s profile!</h1>
+        <h3 class="fw-semibold">Here is all of {{user.username}}'s information and where you can add them as a
+            friend!
+        </h3>
+        <div class="flex-container m-2">
+            <div class=" d-flex align-items-center mb-2">
+                <h2>{{ user.firstname }} {{ user.lastname }}</h2>
+                <h3 class="text-black-50">{{ user.email }}</h3>
+                <h3 class="text-black-50">@{{ user.username }}</h3>
             </div>
         </div>
-    </body>
-    {% endif %}
-</div>
-<div class="d-md-none text-dark">
-    {% if user.id == current_user.id%}
-
-    <body>
-        <div class="p-2">
-            <h1 class="fw-bold">This is {{user.username}}'s profile!</h1>
-            <h3 class="fw-semibold">Here is all of your information about you and where you can make posts.
-            </h3>
-            <div class="container">
-                <div class="d-flex align-items-center mb-2">
-                    <h2>{{ user.firstname }} {{ user.lastname }}</h2>
-                    <h3 class="text-black-50">{{ user.email }}</h3>
-                    <h3 class="text-black-50">@{{ user.username }}</h3>
-                </div>
-            </div>
-        </div>
-    </body>
-    {% else %}
-
-    <body>
-        <div class="p-2 pt-3 text-dark">
-            <h1 class="fw-bold">This is {{user.username}}'s profile!</h1>
-            <h3 class="fw-semibold">Here is all of {{user.username}}'s information and where you can add them as a
-                friend!
-            </h3>
-            <div class="flex-container m-2">
-                <div class=" d-flex align-items-center mb-2">
-                    <h2>{{ user.firstname }} {{ user.lastname }}</h2>
-                    <h3 class="text-black-50">{{ user.email }}</h3>
-                    <h3 class="text-black-50">@{{ user.username }}</h3>
-                </div>
-            </div>
-        </div>
-    </body>
-    {% endif %}
-</div>
+    </div>
+</body>
+{% endif %}
 {% endblock %}
