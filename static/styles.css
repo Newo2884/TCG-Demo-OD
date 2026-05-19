@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
     body {
-        background: url('/static/BG3.jpg');
+        background: url('/static/images/BG3.jpg');
         background-size: cover;
         height: 100vh;
         background-position: center;
