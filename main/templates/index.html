@@ -17,8 +17,41 @@
     </div>
     <div style="text-align: center;" id="label-container"></div>
 </div>
+<button id="add-to-collection-btn" class="btn btn-success d-block mx-auto mt-4" style="display: none;"
+    onclick="addCardToCollection(document.getElementById('card-name').textContent)">
+    Add to Collection
+</button>
+<div style="text-align: center;" id="card-container">
+    <div id="card-details"
+        style="margin-top: 20px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <h3 id="card-name" style="text-align: center;"></h3>
+        <p><strong>Mana Cost:</strong> <span id="card-mana-cost"></span></p>
+        <p><strong>CMC:</strong> <span id="card-cmc"></span></p>
+        <p><strong>Type:</strong> <span id="card-type"></span></p>
+        <p><span id="card-oracle-text"></span></p>
+        <p><span id="card-power"></span>/<span id="card-toughness"></span></p>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-
 <script src="/static/js/scanner.js"></script>
+<script>
+    async function addCardToCollection(cardName) {
+        try {
+            const response = await fetch('/add_to_collection', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ card_name: cardName })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert(result.message);
+            }
+        } catch (error) {
+            console.error("Error adding card to collection:", error);
+        }
+    }
+</script>
 {% endblock %}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-bs-theme="light">
 
 <head>
     {% block head %}
@@ -13,11 +13,12 @@
     {% endblock %}
 </head>
 
-<body class="text-dark">
+<body class="text-dark indexBody">
 
-    <nav class="navbar" style="background-color: blue;" data-bs-theme="light">
+    <nav class="navbar shadow rounded-bottom-2 navbar-expand-lg sticky-top" style="background-color: blue;"
+        data-bs-theme="light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('main.index') }}">TCG SCANNER</a>
+            <a class="navbar-brand fw-semibold" href="{{ url_for('main.index') }}">TCG SCANNER</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -27,29 +28,30 @@
                 <ul class="navbar-nav ms-auto">
                     {% if current_user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link link-light"
-                            href="{{url_for('main.profile', user_id = current_user.id)}}">Profile</a>
+                        <a class="nav-link link-dark fw-semibold"
+                            href="{{url_for('main.view_cards', user_id = current_user.id)}}">Card Collection</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-light" href="{{ url_for('main.index') }}">Posts</a>
+                        <a class="nav-link link-dark fw-semibold" href="{{ url_for('main.index') }}">TCG Scanner</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-light" href="{{ url_for('auth.logout') }}">Logout</a>
+                        <a class="nav-link link-dark fw-semibold" href="{{ url_for('auth.logout') }}">Logout</a>
                     </li>
                     <li>
-                        <a href="https://www.pythonanywhere.com/" class="nav-item nav-link link-light">Python Anywhere
+                        <a href="https://www.pythonanywhere.com/" class="nav-item nav-link fw-semibold">Python Anywhere
                             Website</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-item nav-link link-light" href="{{ url_for('auth.login') }}">Login</a>
+                        <a class="nav-item nav-link link-dark fw-semibold" href="{{ url_for('auth.login') }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link link-light" href="{{ url_for('auth.register') }}">Sign up</a>
+                        <a class="nav-item nav-link link-dark fw-semibold" href="{{ url_for('auth.register') }}">Sign
+                            up</a>
                     </li>
                     <li>
-                        <a href="https://www.pythonanywhere.com/" class="nav-item nav-link link-light" target="_blank"
-                            rel="noopener noreferrer">Python Anywhere
+                        <a href="https://www.pythonanywhere.com/" class="nav-item nav-link link-dark fw-semibold">Python
+                            Anywhere
                             Website</a>
                     </li>
                     {% endif %}

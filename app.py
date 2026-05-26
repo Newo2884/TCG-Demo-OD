@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 from models import db, User, Card, Collection
 import json, os
 
@@ -72,6 +72,35 @@ def get_card_details():
     if card_info:
         return jsonify({"success": True, "card": card_info})
     return jsonify({"success": False, "error": "Card not found"}), 404
+
+@app.route("/add_to_collection", methods=["POST"])
+def add_to_collection():
+    data = request.json
+    #If you've implemented User Login system, Uncomment the first line, then comment out the second line.
+    user_id = current_user.id
+    card_name = data.get("card_name")
+
+    user = User.query.get(user_id)
+    card = Card.query.filter_by(name=card_name).first()
+
+    if not user or not card:
+        return jsonify({"success": False, "error": "User or card not found"}), 404
+
+    # Check if the user already has this card in their collection
+    existing_entry = Collection.query.filter_by(user_id=user_id, card_id=card.id).first()
+    if existing_entry:
+        existing_entry.quantity += 1
+    else:
+        new_entry = Collection(user_id=user_id, card_id=card.id)
+        db.session.add(new_entry)
+
+    db.session.commit()
+    return jsonify({"success": True, "message": "Card added to collection"})
+
+@app.route("/collection/<int:user_id>", methods=["GET"])
+def view_collection(user_id):
+    c = Collection.query.filter_by(user_id=user_id).all()
+    return render_template("collection.html", collection = c)
 
 if __name__ == "__main__":
     with app.app_context():

@@ -34,4 +34,9 @@ class User(db.Model, UserMixin):
 
 class Collection(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    card_id = db.Column(db.Integer)
+    card_id = db.Column(db.Integer, db.ForeignKey("card.id"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    quantity = db.Column(db.Integer, default=1)
+    
+    user = db.relationship("User", backref="collections", lazy=True)
+    card = db.relationship("Card", backref="collections", lazy=True)
