@@ -12,13 +12,16 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">{{c.quantity}}x {{ c.card.name }}</h5>
-                <p class="card-text"><strong>Mana Cost:</strong> {{ c.card.mana_cost }}</p>
-                <p class="card-text"><strong>CMC:</strong> {{ c.card.cmc }}</p>
-                <p class="card-text"><strong>Type:</strong> {{ c.card.type_line }}</p>
-                <p class="card-text">{{ c.card.oracle_text }}</p>
-                {% if c.card.power and c.card.toughness %}
-                <p class="card-text"><strong>Power/Toughness:</strong> {{ c.card.power }}/{{ c.card.toughness }}</p>
+                <h5 class="card-title">{{c.quantity}} x {{ c.card.name }}</h5>
+                <p class="card-text"><strong>Level:</strong> {{ c.card.level }}</p>
+                <p class="card-text"><strong>Race:</strong> {{ c.card.race }}</p>
+                <p class="card-text"><strong>Type:</strong> {{ c.card.type }}</p>
+                <p class="card-text"><strong>Description/Effects:</strong>{{ c.card.desc }}</p>
+                {% if c.card.attack and c.card.defence %}
+                <p class="card-text"><strong>Attack/Defence:</strong> {{ c.card.attack }}/{{ c.card.defence }}</p>
+                {% endif %}
+                {% if c.card.attack and c.card.defence == none %}
+                <p class="card-text"><strong>Attack:</strong> {{ c.card.attack }}</p>
                 {% endif %}
             </div>
         </div>

@@ -7,8 +7,7 @@
     <h1 class="mb-4" style="text-align: center;">Welcome to TCG Scanner</h1>
     <p class="mb-4" style="text-align: center;">Scan your trading cards with ease and keep track of your collection</p>
     <button type="button" class="btn btn-outline-secondary btn-lg d-block mx-auto mb-4"
-        style="border-color: black; color: black;" onclick="init()">
-        Start
+        style="border-color: black; color: black;" onclick="init()"> Start
     </button>
     <!-- make button not add more screens when pressed multiple times/disappear after starting-->
     <div style="text-align: center;" id="webcam-container"></div>
@@ -24,12 +23,13 @@
 <div style="text-align: center;" id="card-container">
     <div id="card-details"
         style="margin-top: 20px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
-        <h3 id="card-name" style="text-align: center;"></h3>
-        <p><strong>Mana Cost:</strong> <span id="card-mana-cost"></span></p>
-        <p><strong>CMC:</strong> <span id="card-cmc"></span></p>
-        <p><strong>Type:</strong> <span id="card-type"></span></p>
-        <p><span id="card-oracle-text"></span></p>
-        <p><span id="card-power"></span>/<span id="card-toughness"></span></p>
+        <h3 id="card-name" style="text-align: center;"><strong>Name: </strong></h3>
+        <p><span id="card-level"><strong>Level: </strong></span></p>
+        <p><span id="card-race"></span><strong>Race: </strong></p>
+        <p><span id="card-type"></span><strong>Type: </strong></p>
+        <p><span id="card-desc"></span><strong>Description/Effects: </strong></p>
+        <p><span id="card-attack"><strong>Attack: </strong></span></p>
+        <p><span id="card-defence"><strong>Defence: </strong></span></p>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
