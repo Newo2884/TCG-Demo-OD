@@ -1,88 +1,62 @@
 {
-    "Regal_Bunnicorn": {
-        "name": "Regal Bunnicorn",
-        "mana_cost": "{1}{W}",
-        "cmc": 2.0,
-        "type_line": "Creature \u2014 Rabbit Unicorn",
-        "oracle_text": "Regal Bunnicorn's power and toughness are each equal to the number of nonland permanents you control.",
-        "power": "*",
-        "toughness": "*",
-        "class_id": "Regal_Bunnicorn"
+    "Dakki_The_Graceful_Mayakashi": {
+        "name": "Dakki, The Graceful Mayakashi",
+        "level": "2",
+        "race": "Zombie",
+        "type": "Tuner/Effect",
+        "desc": "You can only control 1 'Dakki, The Graceful Mayakashi'. When a 'Mayakashi' monster(s) is Special Summoned to your field from the Extra Deck, while this card is in the GY (except during the Damage Step): You can Special Summon this card. You cannot Special Summon monsters from the Extra Deck the turn you activate this effect, except 'Mayakashi' monsters",
+        "attack": "1000",
+        "defence": "0",
+        "class_id": "Dakki_The_Graceful_Mayakashi"
     },
-    "Warren_Warleader": {
-        "name": "Warren Warleader",
-        "mana_cost": "{2}{W}{W}",
-        "cmc": 4.0,
-        "type_line": "Creature \u2014 Rabbit Knight",
-        "oracle_text": "Offspring {2} (You may pay an additional {2} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\nWhenever you attack, choose one \u2014\n\u2022 Create a 1/1 white Rabbit creature token that's tapped and attacking.\n\u2022 Attacking creatures you control get +1/+1 until end of turn.",
-        "power": "4",
-        "toughness": "4",
-        "class_id": "Warren_Warleader"
+    "Mandragon": {
+        "name": "Mandragon",
+        "level": "5",
+        "race": "Plant",
+        "type": "Pendulum",
+        "desc": "This mandragoraharbors the soul of a sorrowful dragon. The cursed tones of its wailing cause both fear and despair",
+        "attack": "2500",
+        "defence": "1000",
+        "class_id": "Mandragon"
     },
-    "Devilish_Valet": {
-        "name": "Devilish Valet",
-        "mana_cost": "{2}{R}",
-        "cmc": 3.0,
-        "type_line": "Creature \u2014 Devil Warrior",
-        "oracle_text": "Trample, haste\nAlliance \u2014 Whenever another creature you control enters, double this creature's power until end of turn.",
-        "power": "1",
-        "toughness": "3",
-        "class_id": "Devilish_Valet"
+    "Triple_Burst_Dragon": {
+        "name": "Triple Burst Dragon",
+        "level": "Link-3",
+        "race": "Dragon",
+        "type": "Link/Effect",
+        "desc": "+2 monsters, except Tokens. Once per turn, during the Damage Step, when a Spell/Trap Card, or a monster effect, is activated (Quick Effect): You can negate the activation. If this card attacks a defenceence Position monster, inflict piercing battle damage. During your Main Phase, except the turn this card was Special Summoned: You can Tribute this card, then target 1 Link-2 or lower monster in your GY: Special Summon it, then you can Special Summon 1 level 4 or lower Dragon monster from your hand.",
+        "attack": "2400",
+        "defence": "",
+        "class_id": "Triple_Burst_Dragon"
     },
-    "Tender_Wildguide": {
-        "name": "Tender Wildguide",
-        "mana_cost": "{1}{G}",
-        "cmc": 2.0,
-        "type_line": "Creature \u2014 Possum Druid",
-        "oracle_text": "Offspring {2} (You may pay an additional {2} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\n{T}: Add one mana of any color.\n{T}: Put a +1/+1 counter on this creature.",
-        "power": "2",
-        "toughness": "2",
-        "class_id": "Tender_Wildguide"
+    "Varham_The_Magistus_Divinity_Dragon": {
+        "name": "Varham, The Magistus Divinity Dragon",
+        "level": "8",
+        "race": "Dragon",
+        "type": "Synchro/Effect",
+        "desc": "1 Tuner + 1+ non-Tuner monster. While this card is an Equip Card, the equipped monster cannot be destroyed by your opponent's Spell/Trap effects. You can only use each of the following effects of 'Varham, The Magistus Divinity Dragon' once per turn. If this Synchro Summoned card is destroyed: You can destroy all face-up cards your opponent controls. At the start of the Damage Step, if the monster this card is equipped to battles an opponent's monster: You can destroy that opponent's monster.",
+        "attack": "2500",
+        "defence": "2900",
+        "class_id": "Varham_The_Magistus_Divinity_Dragon"
     },
-    "Command_Tower": {
-        "name": "Command Tower",
-        "mana_cost": "",
-        "cmc": 0.0,
-        "type_line": "Land",
-        "oracle_text": "{T}: Add one mana of any color in your commander's color identity.",
-        "power": "",
-        "toughness": "",
-        "class_id": "Command_Tower"
+    "Number_24_Dragulas_The_Vampiric_dragon": {
+        "name": "Number 24: Dragulas The Vampiric dragon",
+        "level": "6",
+        "race": "Wyrm",
+        "type": "XYZ/Effect",
+        "desc": "2 level 6 monsters. Once per turn (Quick Effect): You can detach 1 material from this card, then target 1 face-up monster on the field that was Special Summoned from the Extra deck; change it to face-down defenceense Position. If this face-up card in it's owner's control is sent to your GY or banished by your opponent's card effect: You can Special Summon this card face-down defenceense Position. If this card is flipped face-up: Send 1 card on the field to the GY.",
+        "attack": "2400",
+        "defence": "2800",
+        "class_id": "Number_24_Dragulas_The_Vampiric_dragon"
     },
-    "Sol_Ring": {
-        "name": "Sol Ring",
-        "mana_cost": "{1}",
-        "cmc": 1.0,
-        "type_line": "Artifact",
-        "oracle_text": "{T}: Add {C}{C}.",
-        "class_id": "Sol_Ring"
-    },
-    "Champion_Of_Lambholt": {
-        "name": "Champion of Lambholt",
-        "mana_cost": "{1}{G}{G}",
-        "cmc": 3.0,
-        "type_line": "Creature \u2014 Human Warrior",
-        "oracle_text": "Creatures with power less than this creature's power can't block creatures you control.\nWhenever another creature you control enters, put a +1/+1 counter on this creature.",
-        "power": "1",
-        "toughness": "1",
-        "class_id": "Champion_Of_Lambholt"
-    },
-    "Jetmir": {
-        "name": "Jetmir, Nexus of Revels",
-        "mana_cost": "{1}{R}{G}{W}",
-        "cmc": 4.0,
-        "type_line": "Legendary Creature \u2014 Cat Demon",
-        "oracle_text": "Creatures you control get +1/+0 and have vigilance as long as you control three or more creatures.\nCreatures you control also get +1/+0 and have trample as long as you control six or more creatures.\nCreatures you control also get +1/+0 and have double strike as long as you control nine or more creatures.",
-        "power": "5",
-        "toughness": "4",
-        "class_id": "Jetmir"
-    },
-    "Court_of_Embereth": {
-        "name": "Court of Embereth",
-        "mana_cost": "{2}{R}{R}",
-        "cmc": 4.0,
-        "type_line": "Enchantment",
-        "oracle_text": "When this enchantment enters, you become the monarch.\nAt the beginning of your upkeep, create a 3/1 red Knight creature token. Then if you're the monarch, this enchantment deals X damage to each opponent, where X is the number of creatures you control.",
-        "class_id": "Court_of_Embereth"
+    "Herald_of_Ultimateness": {
+        "name": "Herald of Ultimateness",
+        "level": "12",
+        "race": "Fairy",
+        "type": "Ritual/Effect",
+        "desc": "You can Ritual Summon this card with 'Oracle of the Herald'. Must be Ritual Summoned. When your opponent would Special Summon a monster(s), OR activates a Spell/Trap Card, or a monster effect (Quick Effect): You can send 1 Fairy monster from your hand to the GY; negate the Special Summon or activation, and if you do, destroy that card.",
+        "attack": "2000",
+        "defence": "3000",
+        "class_id": "Herald_of_Ultimateness"
     }
 }

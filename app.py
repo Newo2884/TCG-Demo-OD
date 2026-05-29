@@ -40,13 +40,13 @@ def seed_database():
             if not exists:
                 new_card = Card(
                     name=data.get("name"),
-                    mana_cost=data.get("mana_cost"),
-                    cmc=data.get("cmc"),
-                    type_line=data.get("type_line"),
-                    oracle_text=data.get("oracle_text"),
+                    level=data.get("level"),
+                    race=data.get("race"),
+                    type=data.get("type"),
+                    desc=data.get("desc"),
                     # .get() handles missing power/toughness for Lands/Artifacts
-                    power=data.get("power"),
-                    toughness=data.get("toughness"),
+                    attack=data.get("attack"),
+                    defence=data.get("defence"),
                     class_id=data.get("class_id"),
                 )
                 db.session.add(new_card)
@@ -100,7 +100,7 @@ def add_to_collection():
 @app.route("/collection/<int:user_id>", methods=["GET"])
 def view_collection(user_id):
     c = Collection.query.filter_by(user_id=user_id).all()
-    return render_template("collection.html", collection = c)
+    return render_template("main/collection.html", collection = c)
 
 if __name__ == "__main__":
     with app.app_context():

@@ -66,12 +66,12 @@ async function predict() {
 
 function displayCard(card) {
     document.getElementById("card-name").innerText = card.name;
-    document.getElementById("card-type").innerText = card.type_line;
-    document.getElementById("card-mana-cost").innerText = card.mana_cost;
-    document.getElementById("card-cmc").innerText = card.cmc;
-    document.getElementById("card-oracle-text").innerText = card.oracle_text;
-    document.getElementById("card-power").innerText = card.power;
-    document.getElementById("card-toughness").innerText = card.toughness;
+    document.getElementById("card-level").innerText = card.level;
+    document.getElementById("card-race").innerText = card.race;
+    document.getElementById("card-type").innerText = card.type;
+    document.getElementById("card-desc").innerText = card.desc;
+    document.getElementById("card-attack").innerText = card.attack;
+    document.getElementById("card-defence").innerText = card.defence;
 }
 
 async function fetchCardDetails(detectedName) {
