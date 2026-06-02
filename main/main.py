@@ -12,7 +12,7 @@ def index():
 def add_to_collection():
     data = request.json
     user_id = current_user.id
-    card_name = data.get("card_name")
+    card_name = data.get("name")
 
     user = User.query.get(user_id)
     card = Card.query.filter_by(name=card_name).first()
