@@ -1,8 +1,8 @@
 :root {
-    --primary-bg: #ffffff;
-    --secondary-bg: #c4c7c9;
-    --primary-text-colour: #000000;
-    --secondary-text-colour: #2a2a2e;
+    --primary-bg: #000000;
+    --secondary-bg: #2a2a2e;
+    --primary-text-colour: #ffffff;
+    --secondary-text-colour: #c4c7c9;
 }
 
 @media (max-width: 768px) {
@@ -67,6 +67,29 @@
     align-content: center;
 }
 
-.indexBody {
-    background: var(--primary-bg);
+.btn {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 15px;
+    border: 3px solid var(--secondary-bg);
+}
+
+.navbar-brand:hover {
+    text-shadow: #000000;
+    box-shadow: #000000;
+    text-decoration: underline;
+    color: #ffffff;
+    text-underline-offset: 3px;
+}
+
+.nav-link {
+    color: rgb(190, 199, 197);
+}
+
+.nav-link:hover {
+    text-shadow: #000000;
+    box-shadow: #000000;
+    text-decoration: underline;
+    color: #ffffff;
+    text-underline-offset: 3px;
 }

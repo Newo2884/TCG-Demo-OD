@@ -6,8 +6,7 @@
 <div class="container pmx-auto">
     <h1 class="mb-4" style="text-align: center;">Welcome to TCG Scanner</h1>
     <p class="mb-4" style="text-align: center;">Scan your trading cards with ease and keep track of your collection</p>
-    <button type="button" class="btn btn-outline-secondary btn-lg d-block mx-auto mb-4"
-        style="border-color: black; color: black;" onclick="init()"> Start
+    <button type="button" class="btn btn-lg btn-primary d-block mx-auto mb-4" onclick="init()"> Start
     </button>
     <!-- make button not add more screens when pressed multiple times/disappear after starting-->
     <div style="text-align: center;" id="webcam-container"></div>
@@ -23,13 +22,13 @@
 <div style="text-align: center;" id="card-container">
     <div id="card-details"
         style="margin-top: 20px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
-        <h3 id="card-name" style="text-align: center;"><strong>Name: </strong></h3>
-        <p><span id="card-level"><strong>Level: </strong></span></p>
-        <p><span id="card-race"></span><strong>Race: </strong></p>
-        <p><span id="card-type"></span><strong>Type: </strong></p>
-        <p><span id="card-desc"></span><strong>Description/Effects: </strong></p>
-        <p><span id="card-attack"><strong>Attack: </strong></span></p>
-        <p><span id="card-defence"><strong>Defence: </strong></span></p>
+        <h3 id="card-name" style="text-align: center;"></h3>
+        <p><span id="card-level"></span>Level: </p>
+        <p><span id="card-race"></span>Race: </p>
+        <p><span id="card-type"></span>Type: </p>
+        <p><span id="card-desc"></span>Description/Effects: </p>
+        <p><span id="card-attack"></span>Attack: </p>
+        <p><span id="card-defence"></span>Defence: </p>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
@@ -38,13 +37,16 @@
 <script>
     async function addCardToCollection(cardName) {
         try {
-            const response = await fetch('/add_to_collection', {
+            const response = await fetch('/main/add_to_collection', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ card_name: cardName })
             });
 
-            const result = await response.json();
+
+            const text = await response.text();
+            console.log("Server response:", text);
+            const result = JSON.parse(text);
 
             if (result.success) {
                 alert(result.message);
