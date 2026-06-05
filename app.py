@@ -28,34 +28,34 @@ app.register_blueprint(main_bp)
 def not_found(e):
     return render_template("404.html"), 404
 
-def seed_database():
-    """Import card data from JSON into the SQL database."""
-    try:
-        with open("card_data.json", "r") as f:
-            cards_data = json.load(f)
+#def seed_database():
+#    """Import card data from JSON into the SQL database."""
+#   try:
+#        with open("card_data.json", "r") as f:
+#            cards_data = json.load(f)
 
-        for key, data in cards_data.items():
-            # Check if card already exists to avoid duplicates
-            exists = Card.query.filter_by(name=data["name"]).first()
-            if not exists:
-                new_card = Card(
-                    name=data.get("name"),
-                    level=data.get("level"),
-                    race=data.get("race"),
-                    type=data.get("type"),
-                    desc=data.get("desc"),
+#        for key, data in cards_data.items():
+#            # Check if card already exists to avoid duplicates
+#            exists = Card.query.filter_by(name=data["name"]).first()
+#            if not exists:
+#                new_card = Card(
+#                    name=data.get("name"),
+#                    level=data.get("level"),
+#                    race=data.get("race"),
+#                    type=data.get("type"),
+#                    desc=data.get("desc"),
                     # .get() handles missing power/toughness for Lands/Artifacts
-                    attack=data.get("attack"),
-                    defence=data.get("defence"),
-                    class_id=data.get("class_id"),
-                )
-                db.session.add(new_card)
-
-        db.session.commit()
-        print("Database seeded successfully!")
-    except Exception as e:
-        print(f"Error seeding database: {e}")
-        db.session.rollback()
+#                    attack=data.get("attack"),
+#                    defence=data.get("defence"),
+#                    class_id=data.get("class_id"),
+#                )
+#                db.session.add(new_card)
+#
+#        db.session.commit()
+#        print("Database seeded successfully!")
+#    except Exception as e:
+#        print(f"Error seeding database: {e}")
+#        db.session.rollback()
 
 @app.route("/", methods = ['GET', 'POST'])
 def index():
@@ -76,5 +76,5 @@ def get_card_details():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-        seed_database()
+#        seed_database()
     app.run(debug=True, host="0.0.0.0")
