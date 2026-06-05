@@ -8,12 +8,10 @@
     <p class="mb-4" style="text-align: center;">Scan your trading cards with ease and keep track of your collection</p>
     <button type="button" class="btn btn-lg btn-primary d-block mx-auto mb-4" onclick="init()"> Start
     </button>
-    <!-- make button not add more screens when pressed multiple times/disappear after starting-->
     <div style="text-align: center;" id="webcam-container"></div>
     <div style="text-align: center;" id="class-container">
         <h2 id="class-name"></h2>
     </div>
-    <div style="text-align: center;" id="label-container"></div>
 </div>
 <button id="add-to-collection-btn" class="btn btn-success d-block mx-auto mt-4" style="display: none;"
     onclick="addCardToCollection(document.getElementById('card-name').textContent)">
@@ -23,12 +21,12 @@
     <div id="card-details"
         style="margin-top: 20px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
         <h3 id="card-name" style="text-align: center;"></h3>
-        <p><span id="card-level"></span>Level: </p>
-        <p><span id="card-race"></span>Race: </p>
-        <p><span id="card-type"></span>Type: </p>
-        <p><span id="card-desc"></span>Description/Effects: </p>
-        <p><span id="card-attack"></span>Attack: </p>
-        <p><span id="card-defence"></span>Defence: </p>
+        <p>Level: <span id="card-level"></span></p>
+        <p>Race: <span id="card-race"></span></p>
+        <p>Type: <span id="card-type"></span></p>
+        <p>Description/Effects: <span id="card-desc"></span></p>
+        <p>Attack: <span id="card-attack"></span></p>
+        <p>Defence: <span id="card-defence"></span></p>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>

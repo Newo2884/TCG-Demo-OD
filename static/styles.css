@@ -5,33 +5,6 @@
     --secondary-text-colour: #c4c7c9;
 }
 
-@media (max-width: 768px) {
-    body {
-        background: url('/static/images/BG3.jpg');
-        background-size: cover;
-        height: 100vh;
-        background-position: center;
-        background-repeat: no-repeat;
-        overflow: scroll;
-        z-index: 0;
-        background-attachment: fixed;
-        color: var(--bg);
-    }
-}
-
-@media (min-width: 769px) {
-    body {
-        background: url('/static/BG4.jpg');
-        background-size: cover;
-        height: 100vh;
-        background-position: center;
-        background-repeat: no-repeat;
-        overflow: scroll;
-        z-index: 0;
-        background-attachment: fixed;
-    }
-}
-
 .username {
     width: 40ch;
     overflow: hidden;
@@ -65,13 +38,6 @@
     border: 1px solid #f5c6cb;
     align-items: center;
     align-content: center;
-}
-
-.btn {
-    background-color: #ffffff;
-    color: #000000;
-    border-radius: 15px;
-    border: 3px solid var(--secondary-bg);
 }
 
 .navbar-brand:hover {
